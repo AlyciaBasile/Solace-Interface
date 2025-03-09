@@ -1,0 +1,15 @@
+name: Solace Interface Deployment
+
+on push:
+
+  jobs:
+
+    - name: Deploy Solace Interface
+      run: python3 -m interface_app.py
+schedule:
+  daily:
+    - name: Start Server
+      run: python -m interface_app.py
+
+events:
+  workflow_dispatch: {}
