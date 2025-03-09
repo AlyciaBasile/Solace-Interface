@@ -1,0 +1,15 @@
+name: Solace Interface Deployment V2
+
+on workflow_dispatch:
+  jobs:
+
+    - name: Deploy Solace Interface
+      run: python3 -m interface_app.py
+schedule:
+  daily:
+    - name: Start Server
+      run: python -m interface_app.py
+
+events:
+  workflow_dispatch:
+  - type: workflow_dispatch
